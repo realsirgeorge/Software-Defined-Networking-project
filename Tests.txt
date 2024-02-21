@@ -1,0 +1,24 @@
+Part 3 Testing and Debugging (Layer 3 Routing)
+
+Tested connectivity on various Mininet topologies
+linear,3
+tree,2
+triangle
+mesh,5
+Verified ping and TCP connectivity between every host pair
+Used tcpdump on hosts to capture and inspect forwarded packets
+Confirmed shortest path rules installed by inspecting flow tables with ovs-ofctl dump-flows
+Tested failure recovery by shutting down links and verifying convergence
+
+
+Part 4 Testing and Debugging (Load Balancer)
+
+Configured multiple virtual IPs and back-end servers
+Generated TCP traffic to virtual IPs with curl from different hosts
+Verified new connections are load balanced across back-end servers
+Captured and analyzed packets with tcpdump to validate address rewriting
+Inserted temporary counters in code to validate balanced distribution
+Confirmed no disruption to existing connections when a server is removed
+Tested ARP handling by sending arp requests from hosts for virtual IPs
+Validated idle connection timeout leading to TCP Resets
+Debugged issues with unexpected packet forwarding using print statements and flow dumps
